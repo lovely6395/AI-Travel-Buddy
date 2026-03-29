@@ -11,11 +11,9 @@ export const scrapeTourismData = async (query) => {
   }
 
   try {
-     const browser = await puppeteer.launch({ headless: 'new' });
-     const page = await browser.newPage();
-     // Mock delay to represent scraping time
+     // Serverless compatible scraper simulation
+     // In a production environment, you would use Cheerio or fetch for simple data
      await new Promise(resolve => setTimeout(resolve, 800));
-     await browser.close();
 
      if (query.toLowerCase().includes('goa')) {
         return "Current reports suggest Goa's beaches have pleasant weather, with standard operating hours for watersports.";
